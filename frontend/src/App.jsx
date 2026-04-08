@@ -11,9 +11,17 @@ import WriteArticle from './pages/WriteArticle'
 import Community from './pages/Community'
 import RemoveObject from './pages/RemoveObject'
 import Navbar from './components/Navbar'
+import { useAuth } from '@clerk/react'
+import { useEffect } from 'react'
 
 
 const App = () => {
+
+  const {getToken} = useAuth();
+  useEffect(()=>{
+    getToken().then((token)=>console.log(token))
+  },[]);
+
   return (
     <>
       <Routes>
