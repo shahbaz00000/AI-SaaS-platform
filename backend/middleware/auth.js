@@ -1,6 +1,8 @@
-const auth = async(req,res,next)=>{
+
+
+const authenticate = async(req,res,next)=>{
      try {
-        const {userId} = await req.auth();
+        const {userId} = await req.auth()
         req.userId = userId
         next()
      } catch (error) {
@@ -8,4 +10,4 @@ const auth = async(req,res,next)=>{
      }
 };
 
-module.exports = auth
+module.exports = authenticate

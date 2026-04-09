@@ -9,7 +9,15 @@ const creationController = require("../controllers/creationController.js")
  * @description to generate the blog title
  * @access public
  */
-blogTitleRouter.post("/article-generater",auth,creationController.generateArticle);
+blogTitleRouter.post("/generate-article",auth,creationController.generateArticle);
+
+/**
+ * @Routes /api/ai/generate-title
+ * @description to generate the blog title
+ * 
+ * @access public
+ */
+blogTitleRouter.post("/generate-title",auth,creationController.generateBlogTitle);
 
 
 module.exports = blogTitleRouter
