@@ -1,7 +1,8 @@
 const express = require("express");
-const  auth  = require("../middleware/auth");
+const authenticate = require('../middleware/auth.js')
 const blogTitleRouter = express.Router();
-const creationController = require("../controllers/creationController.js")
+const creationController = require("../controllers/creationController.js");
+const upload = require("../middleware/multer.js");
 
 
 /**
@@ -9,15 +10,28 @@ const creationController = require("../controllers/creationController.js")
  * @description to generate the blog title
  * @access public
  */
-blogTitleRouter.post("/generate-article",auth,creationController.generateArticle);
+blogTitleRouter.post("/generate-article",authenticate,creationController.generateArticle);
 
 /**
  * @Routes /api/ai/generate-title
  * @description to generate the blog title
- * 
  * @access public
  */
-blogTitleRouter.post("/generate-title",auth,creationController.generateBlogTitle);
+blogTitleRouter.post("/generate-title",authenticate,creationController.generateBlogTitle);
+
+/**
+ * @Routes /api/ai/generate-title
+ * @description to generate the blog title
+ * @access public
+ */ 
+blogTitleRouter.post("/generate-image",authenticate,creationController.generateImage);
+
+/**
+ * @Routes /api/ai/generate-title
+ * @description to generate the blog title
+ * @access public
+ */ 
+blogTitleRouter.post("/remove-image-background",authenticate,upload.single('image'),creationController.removeBackground);
 
 
 module.exports = blogTitleRouter

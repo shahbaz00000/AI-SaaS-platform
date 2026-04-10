@@ -11,18 +11,18 @@ const {clerkMiddleware,requireAuth} = require("@clerk/express")
 // internal modules
 // const generateBlogTitle = require("./services/blogTitleServices");
 const creationRouter = require("./routes/creationRoutes.js");
+const connectCloudinary = require("./utils/cloudinary.js");
 
 
 // //DATABASE  connection
 // connectDB()
 
 
-
-// generate blogTitl
-// generateBlogTitle("cooking")
+// Cloudinary connection
+connectCloudinary()
 
 // middleware
-app.use(express.json());
+app.use(express.json());  
 app.use(cors());
 app.use(clerkMiddleware());
 // app.use(requireAuth());

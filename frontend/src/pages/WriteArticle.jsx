@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRef } from 'react'
 import { useArticle } from '../hooks/articleHook';
+import Markdown from 'react-markdown'
 
 const WriteArticle = () => {
 
@@ -50,7 +51,7 @@ const WriteArticle = () => {
               ) : isError ? (
                 <p className='text-red-500'>Error: {isError}</p>
               ) : articleContent ? (
-                <div className='whitespace-pre-wrap'>{articleContent}</div>
+                <div className='whitespace-pre-wrap'><Markdown>{articleContent}</Markdown></div>
               ) : (
                 <p className='text-gray-500'>Your article output will show here.</p>
               )}
