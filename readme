@@ -1,124 +1,349 @@
-🚀 AI SaaS Platform
+<div align="center">
 
-A full-stack AI-powered SaaS application built using the PERN/MERN stack that provides multiple AI tools like content generation, image processing, and automation features with secure authentication and payment integration.
+<br/>
 
-📌 Features
-🔐 Authentication & Authorization
-OAuth login (Google, GitHub, etc.)
-Secure session handling using Clerk / JWT
-💳 Payment Integration
-Subscription-based model using Stripe / Razorpay
-Plan-based feature access
-🧠 AI Tools Included
-✍️ Article Generator
-📝 Blog Title Generator
-🎨 AI Image Generator
-🖼️ Background Remover
-🧹 Object Remover
-📊 Dashboard
-User activity tracking
-Credits usage system
-Tool usage history
-⚡ Performance & Scalability
-REST API architecture
-Optimized backend with Node.js & Express
-PostgreSQL / MongoDB database support
-🛠️ Tech Stack
-Frontend
-React.js
-Tailwind CSS / Bootstrap
-Axios
-Backend
-Node.js
-Express.js
-Database
-PostgreSQL / MongoDB
-AI Integration
-OpenAI API / Google GenAI API
-Authentication
-Clerk / JWT Auth
-Payment
-Stripe / Razorpay
-📁 Project Structure
+```
+ █████╗ ██╗    ███████╗ █████╗  █████╗ ███████╗
+██╔══██╗██║    ██╔════╝██╔══██╗██╔══██╗██╔════╝
+███████║██║    ███████╗███████║███████║███████╗
+██╔══██║██║    ╚════██║██╔══██║██╔══██║╚════██║
+██║  ██║██║    ███████║██║  ██║██║  ██║███████║
+╚═╝  ╚═╝╚═╝    ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+```
 
-1. Clone the repository
-git clone https://github.com/your-username/ai-saas-platform.git
-cd ai-saas-platform
-2. Install dependencies
-# Backend
-cd backend
+### ✨ AI-Powered SaaS Platform
+
+**Generate content. Transform images. Analyze resumes. — All in one place.**
+
+<br/>
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
+![Clerk](https://img.shields.io/badge/Clerk_OAuth-6C47FF?style=for-the-badge&logo=clerk&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?style=for-the-badge&logo=google&logoColor=white)
+
+<br/>
+
+</div>
+
+---
+
+## 📌 Overview
+
+**AI SaaS** is a full-stack AI-powered SaaS web application that bundles multiple AI tools into a single platform. Users can generate **articles**, **blog titles**, and **AI images**, perform advanced **image transformations** (background removal, object removal) powered by **Cloudinary AI**, and get intelligent **resume analysis** — all behind a secure, seamless **Clerk OAuth** authentication system.
+
+---
+
+## ✨ Features
+
+### 📝 Content Generation
+| Tool | Description |
+|---|---|
+| ✍️ **Article Generator** | Generate full-length AI-written articles on any topic |
+| 💡 **Blog Title Generator** | Get catchy, SEO-friendly blog title suggestions |
+| 🖼️ **AI Image Generator** | Create unique images from text prompts using AI |
+
+### 🖼️ Image Transformation (Cloudinary AI)
+| Tool | Description |
+|---|---|
+| 🪄 **Background Remover** | Instantly remove background from any image |
+| 🧹 **Object Remover** | Erase unwanted objects from images with AI |
+
+### 📄 Resume Analyzer
+- Upload your resume and get **AI-powered feedback**
+- Identifies **strengths**, **weaknesses**, and **improvement areas**
+- Suggests **missing keywords** for target job roles
+- Provides an overall **resume score**
+
+### 🔐 Authentication
+- **Clerk OAuth** — Sign in with Google, GitHub, and more
+- Secure, session-managed user accounts
+- User-specific history and usage tracking
+
+---
+
+## 🗂️ Project Structure
+
+```
+ai-saas/
+│
+├── client/                          # React Frontend
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       │   ├── Navbar.jsx
+│       │   ├── Sidebar.jsx
+│       │   ├── ToolCard.jsx
+│       │   └── ResumeScore.jsx
+│       ├── pages/
+│       │   ├── Home.jsx
+│       │   ├── Dashboard.jsx
+│       │   ├── ArticleGenerator.jsx
+│       │   ├── BlogTitleGenerator.jsx
+│       │   ├── ImageGenerator.jsx
+│       │   ├── BackgroundRemover.jsx
+│       │   ├── ObjectRemover.jsx
+│       │   └── ResumeAnalyzer.jsx
+│       ├── services/                # Axios API calls
+│       ├── context/                 # Global state
+│       └── App.jsx
+│
+├── server/                          # Node.js + Express Backend
+│   ├── config/
+│   │   └── db.js                    # MongoDB connection
+│   ├── controllers/
+│   │   ├── content.controller.js    # Article & blog title logic
+│   │   ├── image.controller.js      # Image gen & transformation
+│   │   └── resume.controller.js     # Resume analysis logic
+│   ├── middleware/
+│   │   └── clerkAuth.middleware.js  # Clerk JWT verification
+│   ├── models/
+│   │   ├── User.js
+│   │   └── Generation.js            # Saved generations per user
+│   ├── routes/
+│   │   ├── content.routes.js
+│   │   ├── image.routes.js
+│   │   └── resume.routes.js
+│   ├── utils/
+│   │   ├── gemini.js                # Gemini AI calls
+│   │   └── cloudinary.js            # Cloudinary config
+│   └── server.js
+│
+├── .env
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| **Frontend** | React.js, React Router | UI & navigation |
+| **Backend** | Node.js, Express.js | REST API server |
+| **Database** | MongoDB + Mongoose | User data & generation history |
+| **AI Model** | Google Gemini API | Article, blog title & resume analysis |
+| **Image AI** | Cloudinary AI | Background removal & object removal |
+| **Image Upload** | Cloudinary | Image hosting & transformation |
+| **Auth** | Clerk OAuth | Google/GitHub social login |
+| **File Upload** | Multer | Resume & image file handling |
+
+---
+
+## ⚙️ How It Works
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                      USER (Clerk Auth)                           │
+└──────────────────────────┬───────────────────────────────────────┘
+                           │
+          ┌────────────────┼─────────────────┐
+          ▼                ▼                 ▼
+  ┌──────────────┐ ┌──────────────┐ ┌──────────────────┐
+  │   CONTENT    │ │    IMAGE     │ │     RESUME       │
+  │  GENERATION  │ │TRANSFORMATION│ │    ANALYZER      │
+  ├──────────────┤ ├──────────────┤ ├──────────────────┤
+  │ Article Gen  │ │ BG Remover   │ │ Upload Resume    │
+  │ Blog Titles  │ │ Obj Remover  │ │ AI Feedback      │
+  │ Image Gen    │ │              │ │ Score & Tips     │
+  └──────┬───────┘ └──────┬───────┘ └────────┬─────────┘
+         │                │                  │
+         ▼                ▼                  ▼
+  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐
+  │  Gemini AI  │  │ Cloudinary   │  │  Gemini AI   │
+  │    API      │  │    AI API    │  │    API       │
+  └─────────────┘  └──────────────┘  └──────────────┘
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v18+
+- [MongoDB](https://www.mongodb.com/) (local or Atlas)
+- [Cloudinary Account](https://cloudinary.com/) (free tier works)
+- [Clerk Account](https://clerk.dev/) (for OAuth setup)
+- [Google Gemini API Key](https://makersuite.google.com/app/apikey)
+- [Git](https://git-scm.com/)
+
+---
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/shahbaz00000/ai-saas.git
+cd ai-saas
+```
+
+---
+
+### 2. Backend Setup
+
+```bash
+cd server
 npm install
+```
 
-# Frontend
-cd ../frontend
-npm install
-3. Setup Environment Variables
+Create a `.env` file inside `/server`:
 
-Create a .env file in backend:
-
+```env
+# Server
 PORT=5000
-DATABASE_URL=your_database_url
-JWT_SECRET=your_secret_key
 
-# AI APIs
-OPENAI_API_KEY=your_openai_key
-GOOGLE_API_KEY=your_google_ai_key
+# MongoDB
+MONGO_URI=your_mongodb_connection_string
 
-# Auth
-CLERK_SECRET_KEY=your_clerk_key
+# Google Gemini AI
+GEMINI_API_KEY=your_gemini_api_key
 
-# Payment
-STRIPE_SECRET_KEY=your_stripe_key
-RAZORPAY_KEY_ID=your_key
-RAZORPAY_SECRET=your_secret
-4. Run the project
-# Run backend
+# Cloudinary
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+
+# Clerk Auth
+CLERK_SECRET_KEY=your_clerk_secret_key
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+```
+
+Start the backend:
+
+```bash
 npm run dev
+```
 
-# Run frontend
+> Server runs on `http://localhost:5000`
+
+---
+
+### 3. Frontend Setup
+
+```bash
+cd client
+npm install
+```
+
+Create a `.env` file inside `/client`:
+
+```env
+REACT_APP_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+REACT_APP_API_URL=http://localhost:5000
+```
+
+Start the frontend:
+
+```bash
 npm start
-🔗 API Endpoints (Sample)
-Method	Endpoint	Description
-POST	/api/auth/login	User login
-POST	/api/ai/generate	Generate AI content
-POST	/api/payment	Handle subscription
-GET	/api/user/dashboard	User dashboard data
-🧪 Testing
-API testing using Postman
-Unit testing (optional)
-🚀 Deployment
-Frontend: Vercel / Netlify
-Backend: Render / Railway / AWS
-Database: Supabase / MongoDB Atlas
-📸 Screenshots (Optional)
+```
 
-Add screenshots of your UI here
+> React app runs on `http://localhost:3000`
 
-🤝 Contributing
+---
 
-Contributions are welcome!
+## 🔐 API Endpoints
 
-Fork the repo
-Create your feature branch
-Commit your changes
-Push to the branch
-Open a Pull Request
-📄 License
+### Content Routes — `/api/content`
 
-This project is licensed under the MIT License.
+| Method | Endpoint | Description | Access |
+|--------|----------|-------------|--------|
+| `POST` | `/article` | Generate a full article | Private 🔒 |
+| `POST` | `/blog-titles` | Generate blog title suggestions | Private 🔒 |
+| `POST` | `/image` | Generate an AI image from prompt | Private 🔒 |
 
-👨‍💻 Author
+### Image Routes — `/api/image`
 
-Shahbaz Siddique
+| Method | Endpoint | Description | Access |
+|--------|----------|-------------|--------|
+| `POST` | `/remove-background` | Remove image background (Cloudinary) | Private 🔒 |
+| `POST` | `/remove-object` | Remove object from image (Cloudinary) | Private 🔒 |
 
-GitHub: https://github.com/your-username
-LinkedIn: https://linkedin.com/in/your-profile
-⭐ Support
+### Resume Routes — `/api/resume`
 
-If you like this project, give it a ⭐ on GitHub!
+| Method | Endpoint | Description | Access |
+|--------|----------|-------------|--------|
+| `POST` | `/analyze` | Upload & analyze resume with AI | Private 🔒 |
+| `GET` | `/history` | Get past resume analyses | Private 🔒 |
 
-If you want, I can also:
+---
 
-Customize it for your exact features
-Add Clerk + Stripe specific setup
-Or make a premium-level README with badges + diagrams
+## 🔐 Clerk OAuth Setup
+
+1. Create a free account at [clerk.dev](https://clerk.dev)
+2. Create a new application
+3. Enable **Google** and/or **GitHub** as social providers
+4. Copy your **Publishable Key** and **Secret Key** into `.env`
+5. Set your allowed redirect URLs:
+   - Development: `http://localhost:3000`
+   - Production: `https://your-deployed-domain.com`
+
+```
+User clicks "Sign in with Google"
+        ↓
+   Clerk handles OAuth flow
+        ↓
+   JWT issued by Clerk
+        ↓
+   Backend verifies token via Clerk middleware
+        ↓
+   User session established ✅
+```
+
+---
+
+## 📸 Screenshots
+
+> _Add screenshots of your app here_
+
+| Page | Preview |
+|------|---------|
+| Dashboard / Tools Home | _(screenshot)_ |
+| Article Generator | _(screenshot)_ |
+| Blog Title Generator | _(screenshot)_ |
+| AI Image Generator | _(screenshot)_ |
+| Background Remover | _(screenshot)_ |
+| Object Remover | _(screenshot)_ |
+| Resume Analyzer | _(screenshot)_ |
+
+---
+
+## 🔮 Future Enhancements
+
+- [ ] Credit/usage system per user (limit free tier)
+- [ ] Stripe payment integration for premium plans
+- [ ] Save & download generated content
+- [ ] Multi-language article generation
+- [ ] Image-to-image transformation
+- [ ] Team/workspace support
+- [ ] Docker containerization & CI/CD
+
+---
+
+## 👨‍💻 Author
+
+**Shahbaz**
+B.Tech — AI & Data Science | GNIOT, Greater Noida
+
+[![GitHub](https://img.shields.io/badge/GitHub-shahbaz00000-181717?style=for-the-badge&logo=github)](https://github.com/shahbaz00000)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/your-linkedin)
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+⭐ **Found this useful? Drop a star and share it!** ⭐
+
+*Built with ❤️ using MERN + Cloudinary AI + Gemini AI + Clerk OAuth*
+
+</div>
